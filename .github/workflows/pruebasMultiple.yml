@@ -1,0 +1,24 @@
+name: Pruebas unitarias Multiple
+on:
+  push:
+    branches: [ main ]
+jobs:
+  job1:
+    name: Pruebas
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest,widows-latest,ubuntu-18.04]
+    steps:
+      - name: Checkout de repositorio
+        uses: actions/checkout@v2
+      - name: Configuacion entorno de python
+        uses: actions/setup-python@v2
+        with:
+            python-version: '3.7'
+      - name: Instaalcion de librerias y dependencias
+        run: python -m pip install --upgrade pip
+            pip install -r requirements.txt
+      - name: Correr pruebas
+        id: correr-pruebas
+        run: python -m unittest -v tests/test_persona.py
