@@ -46,3 +46,5 @@ class Persona(Base):
        self.nombre = persona.nombre
        self.edad = persona.edad
        self.id = persona.id
+
+    ## probando AUTO MERJE DESDE LA RAMA1###
