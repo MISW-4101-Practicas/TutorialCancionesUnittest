@@ -1,7 +1,7 @@
 name: Mi primer workFlow
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 jobs:
   Mi-primer-job:
     name: Mi primer Job
